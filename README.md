@@ -6,7 +6,11 @@ The chatbot App is a versatile Python application that not only enables you to c
 - - - -
 # How it works 
 - - - -
+<details>
+           
+<summary>     
 # Dependencies Instalation
+</summary>
 ## To install the dependencies and provide required information for the chatbot to run on your local device follow the steps below:
 1. Clone the repository to your local machine 
 2. Pip install required packages to the python enviroment you will run the code on:
@@ -26,6 +30,7 @@ OPENAI_API_KEY=your-openai-api-key
  ```python
 api_key = "your-assemblyai-api-key"
 ```
+</details>
 - - - -
 # Usage 
 ## To run the voice activated chatbot on your local device follow the steps below:
@@ -35,5 +40,8 @@ streamlit run ask.py
 ```
 2. The application will launch in your default web browser, displaying the user interface.
 3. Load multiple PDF documents into the app by clicking on the `Load Documents` button appearing on the sidebar.
-4. Ask questions in natural language about the loaded PDFs using the chat interface or click the `Start` button to start audio recording and click the `Stop` button to finish recording. The recorded audio file will automatically get converted into text and query the documents provided.
-
+4. Click on the `Process` button to vectorize your PDF.
+5. Ask questions in natural language about the loaded PDFs using the chat interface or click the `Start` button to start audio recording and click the `Stop` button to finish recording. The recorded audio file will automatically get converted into text and query the documents provided.
+- - - -
+# Note
+The current app is specifically desing for ease of deployment and hence allows users to upload data rather than the need for setting up a vector database. A free-tier pinecone vector database can be implement. The schema below shows a flow-cart of how that would look like:
