@@ -18,6 +18,7 @@ from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 
+
 if "text" not in st.session_state:
     st.session_state["text"] = "Listening..."
     st.session_state["run"] = False
@@ -179,7 +180,7 @@ def handle_userinput(user_question):
     
     
 
-    for i, message in enumerate(st.session_state.chat_history):
+    for i, message in reversed(list(enumerate(st.session_state.chat_history))):
         #decide if its users turn or the bots turn 
         if i % 2 == 0:
             st.write(user_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
@@ -190,7 +191,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Chat with multiple PDFs")
+    st.set_page_config(page_title="Uber ChatBot")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -198,9 +199,9 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("Chat with multiple PDFs :books:")
+    st.header("Uber Voice Activated ChatBot")
    
-    user_question = st.text_input("Ask a question about your documents:")
+    user_question = st.text_input("Ask a question to UberAI:")
        
     
     col1, col2 = st.columns(2)
