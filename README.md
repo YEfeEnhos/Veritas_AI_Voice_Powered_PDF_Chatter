@@ -41,3 +41,4 @@ streamlit run ask.py
 # Note
 The current app is specifically desing for ease of deployment and hence allows users to upload data rather than the need for setting up a vector database. A free-tier pinecone vector database can be implement. The schema below shows a flow-cart of how that would look like:
 ![gpt-langchain-pdf](https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/d1eaa0c9-755f-4c90-9007-050b8b7cc7a8)
+If you have any questions regarding this process feel free to contact me at _+90 542 830 07 66_ or enhyig.25@robcol.k12.tr
