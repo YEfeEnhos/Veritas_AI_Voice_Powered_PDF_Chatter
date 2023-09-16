@@ -8,9 +8,9 @@
 ```bash
 pip install -r requirements.txt
 ```
- 1. If you run into problems trying to pip install the pyaudio, first:
+If you run into problems trying to pip install the pyaudio, first:
 ```bash
 brew install portaudio
 ```
- 2. Then run the previous script again. 
+Then run the previous script again. 
 
