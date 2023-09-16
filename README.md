@@ -2,7 +2,7 @@
 ## A ChatGTP-like search experince on multiple personal uploaded pdf documents that supports multiple languages brought by OpenAI's ada model supporting real time voice input powered by AssemblyAI' api
 
 # Dependencies Instalation
-## To run the voice activated chatbot on your local device follow the steps below:
+## To install the dependencies and provide required information for the chatbot to run on your local device follow the steps below:
 1. Clone the repository to your local machine 
 2. Pip install required packages to the python enviroment you will run the code on:
 ```bash
@@ -22,6 +22,7 @@ OPENAI_API_KEY=your-openai-api-key
 api_key = "your-assemblyai-api-key"
 ```
 # Usage 
+## To run the voice activated chatbot on your local device follow the steps below:
 1. Run the `ask.py` file using the Streamlit CLI. Execute the following command:
 ```bash
 streamlit run ask.py
