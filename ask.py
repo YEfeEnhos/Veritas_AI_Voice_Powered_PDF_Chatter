@@ -202,11 +202,13 @@ def main():
     st.header("Uber Voice Activated ChatBot")
    
     user_question = st.text_input("Ask a question to UberAI:")
+
+    st.subheader("Voice your question:")
        
     
     col1, col2 = st.columns(2)
 
-    col1.button('Start', on_click=start_listening)
+    col1.button('Start :microphone:', on_click=start_listening)
     col2.button('Stop', on_click=stop_listening)
     
     asyncio.run(send_receive())
