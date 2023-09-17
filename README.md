@@ -5,6 +5,20 @@ A ChatGTP-like search experince on multiple personal uploaded pdf documents that
 The chatbot App is a versatile Python application that not only enables you to chat with multiple PDF documents but also boasts voice activation and multi-language support. With this app, you can ask questions about the PDFs using natural language or simply use your voice to interact with the documents. The application will provide relevant responses based on the content of the loaded PDFs, making it a seamless and inclusive tool for a wide range of users. Please note that the app will exclusively respond to questions related to the loaded PDFs, and it's designed to understand and respond in multiple languages for your convenience.
 - - - -
 # How it works 
+![PDF-LangChain](https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/f4d78600-1acb-4cfd-b5e3-a5437d33431d)
+## The application follows these steps to provide responses to your questions:
+1. PDF Loading: The app reads multiple PDF documents and extracts their text content.
+2. Text Chunking: The extracted text is divided into smaller chunks that can be processed effectively.
+3. Language Model: The application utilizes a language model to generate vector representations (embeddings/locations in a x dimentional plane) of the text chunks. These chunks can either be temporarly stored (as this application does), or be stored in a vectore database (such as pinecone).
+4. Similarity Matching: When you ask a question, the app compares it with the text chunks and identifies the most semantically similar ones (based on cosine similarity matrix, basically closest neighbor in the vector database).
+5. Response Generation: The selected chunks are passed to the language model, which generates a response based on the relevant content of the PDFs (OpenAI LLM).
+## The application follows these steps to get voice queries 
+1. Pyaudio Instance: Stream parameteres such as `FRAMES_PER_BUFFER`, `FORMAT`, `CHANNELS`, and `RATE` are set to open a audio stream that stores input voice when `session.state` is `True`.
+2. Web Socket: Utilizing our AssemblyAI `api_key` we instantiate a web-socket linked to AssemblyAI's API.
+3. Conversion to Json: Collected audio file is then converted to base64 to then get converted into JSON, which is the format AssemblyAI's API expects the API request to take.
+4. Display Text: While the user speaks the text is displayed on the screen, the AI is not prone to minor misspleings or illogical sentence structures, so if the user sees that tehir speech is interpreted differently they can repeat their sentence.
+5. Conversion to .txt: After the user clicks `Stop` in other words `session.state` is `False`, AssemblyAI sends a JSON which we convert and compress it to a .txt file named `transcription.txt`. This is to avoid empty chracters generated when the user takes a second to breath or talks slowly. This wasy the data is regulated.
+6. Querying: Via Path module from pathlib the system checks if `transcription.txt` exists. If it does, the system reads the file and sets the variable `user_question` to `transcription.txt`'s String content. This is then automatically asked to the chatbot which works as described above.
 - - - -         
 # Dependencies Instalation
 ## To install the dependencies and provide required information for the chatbot to run on your local device follow the steps below:
