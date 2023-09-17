@@ -1,3 +1,4 @@
+#initial import of libraries 
 import streamlit as st
 from dotenv import load_dotenv
 import websockets
@@ -18,14 +19,17 @@ from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 
-
+#set variable that stores audio to default ("Listening...")
+#set session_state["run"]= False => the mic is not recording 
 if "text" not in st.session_state:
     st.session_state["text"] = "Listening..."
     st.session_state["run"] = False
-
+#set session_state["run"] = True => the mic is recording 
 def start_listening():
     st.session_state["run"] = True
-    
+
+#testing function allowing for the download of transcription.txt file 
+#no longer in use 
 def download_transcription():
     read_txt = open('transcription.txt', 'r')
     st.download_button(
@@ -33,10 +37,12 @@ def download_transcription():
 		data=read_txt,
 		file_name='transcription_output.txt',
 		mime='text/plain')
-
+	
+#set session_state["run"]= False => the mic is not recording 
 def stop_listening():
     st.session_state["run"] = False
 
+#Setting values for stream variables
 FRAMES_PER_BUFFER =  3200
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
@@ -52,11 +58,13 @@ stream = p.open(
    frames_per_buffer=FRAMES_PER_BUFFER
 )
 
+
 async def send_receive():
 	URL = f"wss://api.assemblyai.com/v2/realtime/ws?sample_rate={RATE}"
 
 	print(f'Connecting websocket to url ${URL}')
-
+	
+	#websocet instantiated
 	async with websockets.connect(
 		URL,
 		extra_headers=(("Authorization", st.secrets['api_key']),),
@@ -71,13 +79,18 @@ async def send_receive():
 		print(session_begins)
 		print("Sending messages ...")
 
-
+		#send request to Assembly AI API
 		async def send():
 			while st.session_state['run']:
 				try:
 					data = stream.read(FRAMES_PER_BUFFER)
+					
+					#convert voice recording to base 64
 					data = base64.b64encode(data).decode("utf-8")
+					
+					#convert base 64 to JSON
 					json_data = json.dumps({"audio_data":str(data)})
+					
 					r = await _ws.send(json_data)
 
 				except websockets.exceptions.ConnectionClosedError as e:
@@ -91,18 +104,20 @@ async def send_receive():
 
 				r = await asyncio.sleep(0.01)
 
-
+		#JSON filed recieved from API
 		async def receive():
 			while st.session_state['run']:
 				try:
 					result_str = await _ws.recv()
+					#Convert returned JSON to txt
 					result = json.loads(result_str)['text']
 
 					if json.loads(result_str)['message_type']=='FinalTranscript':
 						print(result)
 						st.session_state['text'] = result
 						st.write(st.session_state['text'])
-
+						
+						#Create transcription.txt file 
 						transcription_txt = open('transcription.txt', 'a')
 						transcription_txt.write(st.session_state['text'])
 						transcription_txt.write(' ')
@@ -212,13 +227,14 @@ def main():
     col2.button('Stop', on_click=stop_listening)
     
     asyncio.run(send_receive())
-    
+
+    #If transcription.txt exists set user_question to the String stored in the txt file
     if Path('transcription.txt').is_file():
         read_txt = open('transcription.txt', 'r')
         user_question = read_txt.read()
         os.remove('transcription.txt')
    
-   
+   #If user_question has any value either from the text or audio input start querying
     if user_question:
         handle_userinput(user_question)
     with st.sidebar:
