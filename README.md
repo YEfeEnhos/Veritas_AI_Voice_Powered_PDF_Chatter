@@ -1,3 +1,4 @@
+<img width="1436" alt="Screen Shot 2023-09-17 at 04 26 05" src="https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/9ee164f6-b54c-4f3d-977f-1390a949f8f2">
 # Voice activated multi-language chatbot on multiple pdf documents 
 A ChatGTP-like search experince on multiple personal uploaded pdf documents that supports multiple languages brought by OpenAI's ada model supporting real time voice input powered by AssemblyAI's api
 - - - -
