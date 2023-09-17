@@ -28,7 +28,7 @@ css = '''
 bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://www.britishirishchamber.com/wp-content/uploads/2015/07/HK_Logo.gif" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+        <img src="https://pngimg.com/uploads/uber/uber_PNG13.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
