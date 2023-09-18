@@ -52,12 +52,15 @@ streamlit run ask.py
 ```
 2. The application will launch in your default web browser, displaying the user interface.
 3. Load multiple PDF documents into the app by clicking on the `Browse Documents` button appearing on the sidebar.
-4. Click on the `Process` button to vectorize your PDF. Querying before processing any PDF files will dispaly an error message on the screen encouraging to upload documents.
+4. Click on the `Process` button to vectorize your PDF. Querying before processing any PDF files will dispaly an error message on the screen encouraging to upload documents. Make sure to upload your PDF's then click on `Process` and finally start querying or else you will run into errors.
 5. Ask questions in natural language about the loaded PDFs using the chat interface or click the `Start` button to start audio recording and click the `Stop` button to finish recording. The recorded audio file will automatically get converted into text and query the documents provided.
 - - - -
 # Common Errors
 ## Not a websocket 4008 error
 When app is first launched, if you click on `Start` button and face "Not a websocket 4008 error" clik on the `Stop` button and try again. This error occurs from time to time as it takes a couple of seconds for the system to connect to the AssemblyAI's API.
+
+## TypeError: 'NoneType' object is not callable
+If you run into this error while querying it means that your documents weren't processed (vectorized) properly. Ensure that you have first selected your documents, then clicked on `Process` and then started to query. 
 - - - -
 # Note
 The current app is specifically desing for ease of deployment and hence allows users to upload data rather than the need for setting up a vector database. A free-tier pinecone vector database can be implement. The schema below shows a flow-cart of how that would look like:
