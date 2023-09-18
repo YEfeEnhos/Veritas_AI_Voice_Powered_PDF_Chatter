@@ -24,6 +24,9 @@ from langchain.llms import HuggingFaceHub
 if "text" not in st.session_state:
     st.session_state["text"] = "Listening..."
     st.session_state["run"] = False
+#become true when document is uploaded
+def uploaded():
+    st.session_state.upload = True
 #set session_state["run"] = True => the mic is recording 
 def start_listening():
     st.session_state["run"] = True
@@ -213,6 +216,8 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
+    if "upload" not in st.session_state:
+        st.session_state.upload = False
 
     st.header("Uber Voice Activated ChatBot")
    
@@ -236,7 +241,13 @@ def main():
    
    #If user_question has any value either from the text or audio input start querying
     if user_question:
-        handle_userinput(user_question)
+	#if PDF files are uploaded generate response 
+        if st.session_state.upload:
+         handle_userinput(user_question)
+	#if PDF files are not uploaded generate error message 
+        else:
+         error_message = '<p style="font-family:sans-serif; color:Red; font-size: 42px;">Please process documents first!</p>'
+         st.markdown(error_message, unsafe_allow_html=True)
     with st.sidebar:
         
         st.subheader("Your documents")
@@ -244,6 +255,7 @@ def main():
         pdf_docs = st.file_uploader(
             "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
         if st.button("Process"):
+	    uploaded()
             with st.spinner("Processing"):
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
