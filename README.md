@@ -61,4 +61,5 @@ If you have any questions regarding this process feel free to contact me at _+90
 - - - -
 # Related Documentations/Sources
 https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
 https://www.assemblyai.com/docs/
