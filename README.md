@@ -51,7 +51,7 @@ api_key = "your-assemblyai-api-key"
 streamlit run ask.py
 ```
 2. The application will launch in your default web browser, displaying the user interface.
-3. Load multiple PDF documents into the app by clicking on the `Load Documents` button appearing on the sidebar.
+3. Load multiple PDF documents into the app by clicking on the `Browse Documents` button appearing on the sidebar.
 4. Click on the `Process` button to vectorize your PDF.
 5. Ask questions in natural language about the loaded PDFs using the chat interface or click the `Start` button to start audio recording and click the `Stop` button to finish recording. The recorded audio file will automatically get converted into text and query the documents provided.
 - - - -
