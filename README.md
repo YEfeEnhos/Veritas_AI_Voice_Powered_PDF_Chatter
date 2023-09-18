@@ -34,6 +34,7 @@ pip install -r requirements.txt
 brew install portaudio
 ```
  Then run the previous script again. 
+ 
  3. Obtain an API key from OpenAI and add it to the .env file in the project directory.
  ```.env
 OPENAI_API_KEY=your-openai-api-key
