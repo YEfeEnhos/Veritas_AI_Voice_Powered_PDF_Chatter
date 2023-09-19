@@ -255,7 +255,7 @@ def main():
         pdf_docs = st.file_uploader(
             "Upload your PDFs here and click on 'Process'", accept_multiple_files=True)
         if st.button("Process"):
-	    uploaded()
+		uploaded()
             with st.spinner("Processing"):
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
