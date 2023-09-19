@@ -86,7 +86,7 @@ async def send_receive():
 		async def send():
 			while st.session_state['run']:
 				try:
-					data = stream.read(FRAMES_PER_BUFFER)
+					data = stream.read(FRAMES_PER_BUFFER, exception_on_overflow = False)
 					
 					#convert voice recording to base 64
 					data = base64.b64encode(data).decode("utf-8")
