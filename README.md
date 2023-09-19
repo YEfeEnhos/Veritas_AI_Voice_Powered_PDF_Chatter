@@ -57,7 +57,7 @@ streamlit run ask.py
 - - - -
 # Common Errors
 ## Not a websocket 4008 error
-When app is first launched, if you click on `Start` button and face "Not a websocket 4008 error" clik on the `Stop` button and try again. This error occurs from time to time as it takes a couple of seconds for the system to connect to the AssemblyAI's API.
+When app is first launched, if you click on `Start` button and face "Not a websocket 4008 error" clik on the `Stop` button and try again. This error occurs when your device have trouble connecting to AssemblyAI's API. Line 89 updated to `data = stream.read(FRAMES_PER_BUFFER, exception_on_overflow = False)`, so the error must occur very rarely (in the cases where there is a problem with AssemblyAI servers).
 
 ## TypeError: 'NoneType' object is not callable
 If you run into this error while querying it means that your documents weren't processed (vectorized) properly. Ensure that you have first selected your documents, then clicked on `Process` and then started to query. 
