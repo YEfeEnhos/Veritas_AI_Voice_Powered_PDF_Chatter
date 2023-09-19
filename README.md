@@ -61,6 +61,9 @@ When app is first launched, if you click on `Start` button and face "Not a webso
 
 ## TypeError: 'NoneType' object is not callable
 If you run into this error while querying it means that your documents weren't processed (vectorized) properly. Ensure that you have first selected your documents, then clicked on `Process` and then started to query. 
+
+## SSLCertVerificationError: certificate verify failed
+This error is caused by Python on Macs exclusively. To resolve this pronblem you have to open your installed Python folder and click on `Install Certificates.command`.
 - - - -
 # Note
 The current app is specifically desing for ease of deployment and hence allows users to upload data rather than the need for setting up a vector database. A free-tier pinecone vector database can be implement. The schema below shows a flow-cart of how that would look like:
