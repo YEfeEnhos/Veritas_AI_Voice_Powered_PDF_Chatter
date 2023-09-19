@@ -35,11 +35,11 @@ brew install portaudio
 ```
  Then run the previous script again. 
  
- 3. Obtain an API key from OpenAI and add it to the .env file in the project directory.
+ 3. Obtain an API key from OpenAI and add it to the .env file in the project directory. The key can be found in the six-page document we have shared.
  ```.env
 OPENAI_API_KEY=your-openai-api-key
 ```
-4.  Obtain an API key from AssemblyAPI and add it to the .streamlit/secrets.toml and configure.py file in the project directory.
+4.  Obtain an API key from AssemblyAPI and add it to the .streamlit/secrets.toml and configure.py file in the project directory. The key can be found in the six-page document we have shared.
  ```python
 api_key = "your-assemblyai-api-key"
 ```
