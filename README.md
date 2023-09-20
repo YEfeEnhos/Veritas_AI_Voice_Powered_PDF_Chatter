@@ -23,7 +23,7 @@ The chatbot App is a versatile Python application that not only enables you to c
 6. Querying: Via Path module from pathlib the system checks if `transcription.txt` exists. If it does, the system reads the file and sets the variable `user_question` to `transcription.txt`'s String content. This is then automatically asked to the chatbot which works as described above.
 
 
-https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/90dbbd62-7405-4a18-9743-9b310127ae22
+https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/e9801a29-2e79-4e0f-b447-6f97a09ca705
 
 
 - - - -         
