@@ -21,7 +21,11 @@ The chatbot App is a versatile Python application that not only enables you to c
 4. Display Text: While the user speaks the text is displayed on the screen, the AI is not prone to minor misspleings or illogical sentence structures, so if the user sees that tehir speech is interpreted differently they can repeat their sentence.
 5. Conversion to .txt: After the user clicks `Stop` in other words `session.state` is `False`, AssemblyAI sends a JSON which we convert and compress it to a .txt file named `transcription.txt`. This is to avoid empty chracters generated when the user takes a second to breath or talks slowly. This wasy the data is regulated.
 6. Querying: Via Path module from pathlib the system checks if `transcription.txt` exists. If it does, the system reads the file and sets the variable `user_question` to `transcription.txt`'s String content. This is then automatically asked to the chatbot which works as described above.
-<video src='https://youtu.be/vItIC7DCXN4' width=180/>
+
+
+https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/90dbbd62-7405-4a18-9743-9b310127ae22
+
+
 - - - -         
 # Dependencies Instalation
 ## To install the dependencies and provide required information for the chatbot to run on your local device follow the steps below:
