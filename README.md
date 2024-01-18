@@ -1,4 +1,5 @@
-![veritas](https://github.com/YEfeEnhos/Veritas_AI_Voice_Powered_PDF_Chatter/assets/91611406/9fbd7273-aee8-4792-8002-d1f99dbad533)
+![veritas (1)](https://github.com/YEfeEnhos/Veritas_AI_Voice_Powered_PDF_Chatter/assets/91611406/6ccd3a49-d5eb-4d00-8ac0-88abe53402fd)
+
 
 # Voice activated multi-language chatbot on multiple pdf documents 
 A ChatGTP-like search experince on multiple personal uploaded pdf documents that supports multiple languages brought by OpenAI's ada model supporting real time voice input powered by AssemblyAI's api
