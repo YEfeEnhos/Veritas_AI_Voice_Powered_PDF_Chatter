@@ -28,7 +28,7 @@ css = '''
 bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://pngimg.com/uploads/uber/uber_PNG13.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+        <img src="https://static1.squarespace.com/static/61e9374e0434354049a258f9/t/646cdef9e82b4261ce96f647/1684856569562/VeritasAI-white-logo.png?format=1500w" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
