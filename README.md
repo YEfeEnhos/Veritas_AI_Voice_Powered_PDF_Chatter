@@ -23,7 +23,7 @@ The chatbot App is a versatile Python application that not only enables you to c
 6. Querying: Via Path module from pathlib the system checks if `transcription.txt` exists. If it does, the system reads the file and sets the variable `user_question` to `transcription.txt`'s String content. This is then automatically asked to the chatbot which works as described above.
 
 
-https://github.com/YEfeEnhos/UGH_Coding_RC_App_Development_Team/assets/91611406/e9801a29-2e79-4e0f-b447-6f97a09ca705
+https://github.com/YEfeEnhos/Veritas_AI_Voice_Powered_PDF_Chatter/assets/91611406/ed4ad5c0-1cb4-4d4e-a815-d655431baae6
 
 
 - - - -         
@@ -73,8 +73,7 @@ This error is caused by Python on Macs exclusively. To resolve this pronblem you
 # Note
 The current app is specifically desing for ease of deployment and hence allows users to upload data rather than the need for setting up a vector database. A free-tier pinecone vector database can be implement. The schema below shows a flow-cart of how that would look like:
 
-https://github.com/YEfeEnhos/Veritas_AI_Voice_Powered_PDF_Chatter/assets/91611406/ed4ad5c0-1cb4-4d4e-a815-d655431baae6
-
+![gpt-langchain-pdf](https://github.com/YEfeEnhos/Veritas_AI_Voice_Powered_PDF_Chatter/assets/91611406/1669c6c7-0b08-4a4f-8ec4-aad51103c4f7)
 
 If you have any questions regarding this process feel free to contact me at _+90 542 830 07 66_ or enhyig.25@robcol.k12.tr
 - - - -
