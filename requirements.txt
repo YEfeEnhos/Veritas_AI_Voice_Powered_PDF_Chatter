@@ -9,7 +9,7 @@ websockets
 asyncio
 pyaudio
 pathlib
-tiktoken
+tiktoken 
 
 
 # uncomment to use huggingface llms
