@@ -209,7 +209,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Uber ChatBot")
+    st.set_page_config(page_title="Veritas ChatBot")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -219,7 +219,7 @@ def main():
     if "upload" not in st.session_state:
         st.session_state.upload = False
 
-    st.header("Uber Voice Activated ChatBot")
+    st.header("Veritas Voice Activated ChatBot")
    
     user_question = st.text_input("Ask a question to UberAI and then press Enter:")
 
